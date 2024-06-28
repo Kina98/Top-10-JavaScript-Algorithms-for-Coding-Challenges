@@ -9,7 +9,7 @@ function revInt(n) {
     return parseInt(reversed) * Math.sign(n);
 }
 
-console.log(revInt(-4202));
+console.log(revInt(4202));
 
 
 // autre maniere
