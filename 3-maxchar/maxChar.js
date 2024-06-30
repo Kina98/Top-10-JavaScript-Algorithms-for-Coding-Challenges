@@ -1,10 +1,26 @@
 // donner une chaine, et on return le caractére le plus fréquent dans cette chaine
-// Exemples: maxChar("codeloccol") === "c"
+// Exemples: maxChar("codelocccol") === "c"
 
 function maxChar(str) {
-    const chaine = str.split('');
-    for (let i = 0; i < chaine.length; i++) {
-        
-        
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+    for(let char of str){
+        if (charMap[char]) {
+            charMap[char] = charMap[char] + 1;
+        } else {
+            charMap[char] = 1;
+        }
     }
+
+    for(let key in charMap){
+        if(charMap[key] > max) {
+            max = charMap[key];
+            maxChar = key;
+        }
+    }
+
+    return maxChar;
 }
+
+console.log(maxChar("apple 1231111"));
